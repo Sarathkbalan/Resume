@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { resumeData } from '../../data/resume';
 import { SectionHeader } from '../ui/SectionHeader';
+import { TechLogo } from '../ui/TechLogo';
 
 export const Experience: React.FC = () => {
   const { experience } = resumeData;
@@ -140,9 +141,10 @@ export const Experience: React.FC = () => {
                               {item.techStack.map((tech) => (
                                 <span
                                   key={tech}
-                                  className="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/70 border border-slate-700/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/70 border border-slate-700/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                                 >
-                                  {tech}
+                                  <TechLogo name={tech} size={14} />
+                                  <span>{tech}</span>
                                 </span>
                               ))}
                             </div>

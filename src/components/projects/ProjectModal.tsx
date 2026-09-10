@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Github, ExternalLink, CheckCircle2, Layers, Cpu, Code2 } from 'lucide-react';
 import { ProjectItem } from '../../types';
 import { ProjectVisual } from './ProjectVisual';
+import { TechLogo } from '../ui/TechLogo';
 
 interface ProjectModalProps {
   project: ProjectItem | null;
@@ -107,9 +108,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/80 border border-slate-700 text-cyan-300"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/80 border border-slate-700 text-cyan-300"
                   >
-                    {tag}
+                    <TechLogo name={tag} size={14} />
+                    <span>{tag}</span>
                   </span>
                 ))}
               </div>

@@ -20,9 +20,11 @@ export const resumeData: ResumeData = {
       title: 'Frontend Development',
       key: 'frontend',
       icon: 'Layout',
-      description: 'Crafting responsive, high-performance interfaces with state management and reusable component architecture.',
+      description: 'Crafting responsive, high-performance interfaces with state management, reusable component architecture, and design systems.',
       skills: [
         'React.js',
+        'JavaScript (ES6+)',
+        'Chakra UI',
         'React Native',
         'Redux/Context patterns',
         'Responsive UI Design',

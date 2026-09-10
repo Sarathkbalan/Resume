@@ -8,11 +8,11 @@ import {
   Sparkles,
   Wrench,
   Boxes,
-  Check,
   Search,
 } from 'lucide-react';
 import { resumeData } from '../../data/resume';
 import { SectionHeader } from '../ui/SectionHeader';
+import { TechLogo } from '../ui/TechLogo';
 
 export const Skills: React.FC = () => {
   const { skills } = resumeData;
@@ -28,6 +28,21 @@ export const Skills: React.FC = () => {
     Wrench,
     Boxes,
   };
+
+  const flagshipTechs = [
+    { name: 'JavaScript', category: 'Core Language' },
+    { name: 'Chakra UI', category: 'UI Component System' },
+    { name: 'React.js', category: 'Frontend Library' },
+    { name: 'Node.js', category: 'Backend Runtime' },
+    { name: 'MongoDB', category: 'Document Database' },
+    { name: 'Express.js', category: 'Web Framework' },
+    { name: 'NestJS', category: 'Enterprise Backend' },
+    { name: 'Docker', category: 'Containerization' },
+    { name: 'Python', category: 'AI & Scripting' },
+    { name: 'Solidity', category: 'Smart Contracts' },
+    { name: 'Ethereum', category: 'Blockchain Protocol' },
+    { name: 'Git', category: 'Version Control' },
+  ];
 
   const filteredCategories = skills.map((cat) => {
     if (activeCategoryKey !== 'all' && cat.key !== activeCategoryKey) {
@@ -51,8 +66,46 @@ export const Skills: React.FC = () => {
         <SectionHeader
           index="03 // SKILLS"
           title="Technical Capabilities & Engineering Stack"
-          description="Verified toolsets and technologies spanning modern frontend, backend systems, intelligent AI integration, and blockchain."
+          description="Verified toolsets and technologies spanning modern JavaScript & Chakra UI design systems, full-stack MERN, AI integration, and blockchain."
         />
+
+        {/* Featured Tech Stack Bar with Official Brand Logos */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14 p-6 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-md"
+        >
+          <div className="flex items-center justify-between mb-4">
+            <span className="font-mono text-xs text-cyan-400 font-semibold tracking-wider uppercase flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              Featured Technologies & Frameworks
+            </span>
+            <span className="text-[11px] font-mono text-slate-400 hidden sm:inline">
+              Interactive Brand Badges
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            {flagshipTechs.map((item) => (
+              <div
+                key={item.name}
+                className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 hover:border-cyan-500/40 hover:bg-slate-900 transition-all group"
+              >
+                <TechLogo name={item.name} size={22} className="group-hover:scale-110 transition-transform" />
+                <div className="overflow-hidden">
+                  <div className="text-xs font-bold text-slate-200 group-hover:text-cyan-300 transition-colors truncate">
+                    {item.name}
+                  </div>
+                  <div className="text-[10px] font-mono text-slate-400 truncate">
+                    {item.category}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Filters and Search Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
@@ -91,7 +144,7 @@ export const Skills: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search skill (e.g. React, NestJS)..."
+              placeholder="Search skill (e.g. JavaScript, Chakra UI)..."
               className="w-full pl-9 pr-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 font-mono"
             />
           </div>
@@ -133,14 +186,14 @@ export const Skills: React.FC = () => {
                       {cat.description}
                     </p>
 
-                    {/* Skill Pills */}
+                    {/* Skill Pills with Authentic Logos */}
                     <div className="flex flex-wrap gap-2">
                       {cat.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-950/80 border border-slate-800 text-slate-300 hover:border-cyan-500/40 hover:text-cyan-300 transition-colors"
+                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-950/80 border border-slate-800 text-slate-300 hover:border-cyan-500/40 hover:text-cyan-300 hover:bg-slate-900 transition-all"
                         >
-                          <Check className="w-3 h-3 text-cyan-400/80" />
+                          <TechLogo name={skill} size={15} />
                           <span>{skill}</span>
                         </span>
                       ))}

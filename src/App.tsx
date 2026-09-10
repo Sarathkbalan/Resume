@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { ThemeProvider } from './context/ThemeContext';
 import { useActiveSection } from './hooks/useActiveSection';
 import { CustomCursor } from './components/ui/CustomCursor';
@@ -123,9 +124,11 @@ const AppContent: React.FC = () => {
 
 export const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    <ChakraProvider resetCSS={false}>
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
+    </ChakraProvider>
   );
 };
 

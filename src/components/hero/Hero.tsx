@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { resumeData } from '../../data/resume';
 import { ParticleCanvas } from './ParticleCanvas';
+import { ChakraWidget } from '../ui/ChakraWidget';
 
 interface HeroProps {
   onOpenResume: () => void;
@@ -36,18 +37,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
       <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
-        {/* Availability / Status Pill */}
+        {/* Availability / Status Pill & Chakra UI Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-xs font-mono text-emerald-400 mb-6 backdrop-blur-md shadow-sm"
+          className="flex flex-wrap items-center justify-center gap-3 mb-6"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span className="tracking-widest font-semibold">{personal.status}</span>
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-xs font-mono text-emerald-400 backdrop-blur-md shadow-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="tracking-widest font-semibold">{personal.status}</span>
+          </div>
+
+          <ChakraWidget />
         </motion.div>
 
         {/* Introduction */}

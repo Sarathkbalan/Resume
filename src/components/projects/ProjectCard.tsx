@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Github, Sparkles } from 'lucide-react';
 import { ProjectItem } from '../../types';
 import { ProjectVisual } from './ProjectVisual';
+import { TechLogo } from '../ui/TechLogo';
 
 interface ProjectCardProps {
   project: ProjectItem;
@@ -61,9 +62,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect, ind
           {project.tags.slice(0, 4).map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-slate-950/80 border border-slate-800 text-slate-300 group-hover:border-cyan-500/30"
+              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-slate-950/80 border border-slate-800 text-slate-300 group-hover:border-cyan-500/30"
             >
-              {tag}
+              <TechLogo name={tag} size={13} />
+              <span>{tag}</span>
             </span>
           ))}
           {project.tags.length > 4 && (
