@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="24" fill="#090d16" />
+  <rect x="2" y="2" width="96" height="96" rx="22" stroke="url(#border-gradient)" stroke-width="2" />
+  <path d="M28 35C28 30.5817 31.5817 27 36 27H64C68.4183 27 72 30.5817 72 35V38C72 42.4183 68.4183 46 64 46H36C31.5817 46 28 49.5817 28 54V65C28 69.4183 31.5817 73 36 73H64C68.4183 73 72 69.4183 72 65" stroke="url(#accent-gradient)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="70" cy="30" r="4" fill="#10b981" />
+  <defs>
+    <linearGradient id="border-gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06b6d4" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#10b981" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="accent-gradient" x1="28" y1="27" x2="72" y2="73" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee" />
+      <stop offset="1" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+</svg>
